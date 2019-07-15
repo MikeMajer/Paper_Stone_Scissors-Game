@@ -14,8 +14,17 @@ const hands = [...document.querySelectorAll('.select img')];
 
 function handSelection() {
   game.playerHand = this.dataset.option
-  hands.forEach(hand => hand.style.boxShadow = '');
+  hands.forEach(hand => {
+    hand.style.boxShadow = ''
+  });
   this.style.boxShadow = '0 0 0 3px red';
+  this.style.opacity = '1';
+}
+
+function choiceReset() {
+  hands.forEach(hand => {
+    hand.style.boxShadow = 'none', hand.style.opacity = '0.6'
+  });
 }
 
 // AI choice
@@ -70,7 +79,8 @@ function startGame() {
   const gameResult = checkResult(game.playerHand, game.aiHand);
   console.log(gameResult);
   publishResult(game.playerHand, game.aiHand, gameResult);
-  endGame()
+  endGame();
+  choiceReset();
 }
 
 hands.forEach(hand => hand.addEventListener('click', handSelection));

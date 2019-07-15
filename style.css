@@ -11,11 +11,11 @@ body {
 
 h1 {
   text-align: center;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 h3 {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 .panel {
@@ -56,10 +56,16 @@ h2 {
 }
 
 .select img {
-  width: 200px;
+  width: 170px;
   margin: 20px;
   display: inline-block;
+  border-radius: 10px;
+  opacity: 0.6;
+}
 
+.select img:hover{
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 button {
